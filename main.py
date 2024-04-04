@@ -16,6 +16,8 @@ from api.user import user_api # Blueprint import api definition
 from api.player import player_api
 from api.titanic import titanic_api
 from api.loan import loan_api
+from api.heart import heart_api
+
 # database migrations
 from model.users import initUsers
 from model.players import initPlayers
@@ -34,6 +36,7 @@ app.register_blueprint(covid_api) # register api routes
 app.register_blueprint(user_api) # register api routes
 app.register_blueprint(player_api)
 app.register_blueprint(titanic_api) # register api routes
+app.register_blueprint(heart_api)
 app.register_blueprint(app_projects) # register app pages
 app.register_blueprint(loan_api)
 
