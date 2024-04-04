@@ -16,7 +16,9 @@ from api.user import user_api # Blueprint import api definition
 from api.player import player_api
 from api.titanic import titanic_api
 from api.loan import loan_api
-# from api.heart import heart_api
+from api.heart import heart_api
+from api.sleep import sleep_api
+
 
 # database migrations
 from model.users import initUsers
@@ -33,8 +35,9 @@ app.register_blueprint(joke_api) # register api routes
 app.register_blueprint(covid_api) # register api routes
 app.register_blueprint(user_api) # register api routes
 app.register_blueprint(player_api)
+app.register_blueprint(sleep_api)
 app.register_blueprint(titanic_api) # register api routes
-# app.register_blueprint(heart_api)
+app.register_blueprint(heart_api)
 app.register_blueprint(loan_api)
 
 @app.errorhandler(404)  # catch for URL not found
