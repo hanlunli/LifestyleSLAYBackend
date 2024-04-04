@@ -65,20 +65,16 @@ class Sleep():
         predicted_disorder = regressor.predict(input_data)
 
         # Respond with the prediction
-        return jsonify({'predicted_sleep_disorder': predicted_disorder[0]})
+        return jsonify({'predicted_sleep_disorder': determine_closest_decimal(predicted_disorder[0])})
 def determine_closest_decimal(decimal_value):
     distance_to_0 = abs(decimal_value - 0)
     distance_to_1 = abs(decimal_value - 1)
     distance_to_2 = abs(decimal_value - 2)
 
     if distance_to_0 < distance_to_1 and distance_to_0 < distance_to_2:
-        return 0
+        return ("no sleep disorder")
     elif distance_to_1 < distance_to_0 and distance_to_1 < distance_to_2:
-        return 1
+        return ("sleep apnea")
     else:
-        return 2
+        return ("insomnia")
 
-# Example usage:
-decimal_value = 1.3
-closest_integer = determine_closest_decimal(decimal_value)
-print(f"The closest integer to {decimal_value} is: {closest_integer}")
