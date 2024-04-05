@@ -20,6 +20,7 @@ from api.loan import loan_api
 from api.heart import heart_api
 from api.sleep import sleep_api
 from api.stroke import stroke_api
+from api.water import water_api
 
 
 # database migrations
@@ -41,6 +42,7 @@ app.register_blueprint(sleep_api)
 app.register_blueprint(titanic_api) # register api routes
 app.register_blueprint(heart_api)
 app.register_blueprint(loan_api)
+app.register_blueprint(water_api)
 app.register_blueprint(badminton_api) # register app pages
 app.register_blueprint(stroke_api)
 
