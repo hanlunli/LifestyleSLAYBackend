@@ -15,6 +15,7 @@ from api.joke import joke_api # Blueprint import api definition
 from api.user import user_api # Blueprint import api definition
 from api.player import player_api
 from api.titanic import titanic_api
+from api.badminton import badminton_api
 from api.loan import loan_api
 from api.heart import heart_api
 from api.sleep import sleep_api
@@ -39,6 +40,8 @@ app.register_blueprint(sleep_api)
 app.register_blueprint(titanic_api) # register api routes
 app.register_blueprint(heart_api)
 app.register_blueprint(loan_api)
+app.register_blueprint(badminton_api) # register app pages
+
 
 @app.errorhandler(404)  # catch for URL not found
 def page_not_found(e):
