@@ -16,14 +16,17 @@ from api.user import user_api # Blueprint import api definition
 from api.player import player_api
 from api.titanic import titanic_api
 from api.badminton import badminton_api
+from api.loan import loan_api
+from api.heart import heart_api
+from api.sleep import sleep_api
+
+
 # database migrations
 from model.users import initUsers
 from model.players import initPlayers
 from model.titanicML import initTitanic
 
 # setup App pages
-from projects.projects import app_projects # Blueprint directory import projects definition
-
 
 # Initialize the SQLAlchemy object to work with the Flask app instance
 db.init_app(app)
@@ -33,8 +36,10 @@ app.register_blueprint(joke_api) # register api routes
 app.register_blueprint(covid_api) # register api routes
 app.register_blueprint(user_api) # register api routes
 app.register_blueprint(player_api)
+app.register_blueprint(sleep_api)
 app.register_blueprint(titanic_api) # register api routes
-app.register_blueprint(app_projects) # register app pages
+app.register_blueprint(heart_api)
+app.register_blueprint(loan_api)
 app.register_blueprint(badminton_api) # register app pages
 
 
@@ -63,7 +68,6 @@ def generate_data():
 
 # Register the custom command group with the Flask application
 app.cli.add_command(custom_cli)
-        
 # this runs the application on the development server
 if __name__ == "__main__":
     # change name for testing
