@@ -7,7 +7,6 @@ from flask import Blueprint, request, jsonify, current_app, Response
 from __init__ import app, db
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
-from projects.projects import app_projects  # Blueprint directory import projects definition
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder

@@ -13,7 +13,7 @@ class Loan():
     #Loading, pre-proccessing, and splitting of data
     def initialize():
         data_train = pd.read_csv('train.csv')
-        data_train[' education'] = data_train[' education'].map({' Graduate': 1, ' Not Graduate': 0})
+        data_train['education'] = data_train['education'].map({' Graduate': 1, ' Not Graduate': 0})
         data_train[' self_employed'] = data_train[' self_employed'].map({' Yes': 1, ' No': 0})
         data_train[" loan_status"]= data_train[" loan_status"].map({" Approved": 1, " Rejected": 0})
         X = data_train[[' no_of_dependents', ' education', ' self_employed', ' income_annum', ' loan_amount', ' loan_term',' cibil_score',' residential_assets_value',' commercial_assets_value',' luxury_assets_value',' bank_asset_value']]
