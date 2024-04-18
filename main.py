@@ -19,9 +19,11 @@ from api.loan import loan_api
 from api.heart import heart_api
 from api.sleep import sleep_api
 from api.water import water_api
+from api.srijanCPT import user_api
 
 
 # database migrations
+from model.srijanCPT import initUsers2
 from model.users import initUsers
 from model.players import initPlayers
 from model.titanicML import initTitanic
@@ -63,6 +65,7 @@ custom_cli = AppGroup('custom', help='Custom commands')
 @custom_cli.command('generate_data')
 def generate_data():
     initUsers()
+    initUsers2()
     initPlayers()
     initTitanic()
 
